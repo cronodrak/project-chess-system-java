@@ -1,16 +1,16 @@
 package bordgame;
 
-public class Bord {
+public class Board {
 	
 	private Integer rows;
 	private int columns;
 	private Piece[][] pieces;
 	
-	public Bord() {
+	public Board() {
 		
 	}
 
-	public Bord(Integer rows, int columns) {
+	public Board(Integer rows, int columns) {
 		this.rows = rows;
 		this.columns = columns;
 		pieces = new Piece[rows][columns];
@@ -32,5 +32,11 @@ public class Bord {
 		this.columns = columns;
 	}
 	
+	public Piece piece(int row, int column) {
+		return pieces[row][column];
+	}
 	
+	public Piece piece(Position position) {
+		return pieces[position.getRow()] [position.getColumn()];
+	}
 }
